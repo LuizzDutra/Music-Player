@@ -16,16 +16,15 @@ public class Main
         boolean run = true;
 
         while(run){
-            String userInputBuffer = inputScanner.nextLine();
-            userInput = userInputBuffer.toUpperCase();
-            switch (userInput) {
+            userInput = inputScanner.nextLine();
+            switch (userInput.toUpperCase()) {
                 case ("P") -> MusicPlayer.pauseAudio();
                 case ("S") -> MusicPlayer.startAudio();
                 case ("R") -> MusicPlayer.restartAudio();
                 case ("E") -> MusicPlayer.stopAudio();
                 case ("L") -> {MusicPlayer.toggleLoopMode(); System.out.println(MusicPlayer.getLoopMode());}
                 case ("Q") -> run = false;
-                default -> {MusicPlayer.loadAudioByName(userInputBuffer); MusicPlayer.startAudio();}
+                default -> {MusicPlayer.loadAudioByName(userInput); MusicPlayer.startAudio();}
             }
 
         }
